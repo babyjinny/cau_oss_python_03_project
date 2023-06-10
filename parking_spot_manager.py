@@ -49,6 +49,31 @@ def print_spots(spots):
         print(spot)
 
 
+#VERSION 3) 필터링 기능 추가
+
+# name으로 필터링
+def filter_by_name(spots, name):
+    return [spot for spot in spots if name in spot.get('name')]
+
+# city로 필터링
+def filter_by_city(spots, city):
+    return [spot for spot in spots if city in spot.get('city')]
+
+# district로 필터링
+def filter_by_district(spots, district):
+    return [spot for spot in spots if district in spot.get('district')]
+
+# ptype 유형으로 필터링
+def filter_by_ptype(spots, ptype):
+    return [spot for spot in spots if ptype in spot.get('ptype')]
+
+# locations로 필터링
+def filter_by_location(spots, locations):
+    min_lat, max_lat, min_long, max_long = locations
+    return [spot for spot in spots if min_lat < spot.get('latitude') < max_lat and min_long < spot.get('longitude') < max_long]
+
+
+
 # 각 단계별로 테스트 (테스트할때 주석해제 후 사용)
 if __name__ == '__main__':
     print("Testing the module...")
