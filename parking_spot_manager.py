@@ -74,6 +74,14 @@ def filter_by_location(spots, locations):
 
 
 
+#VERSION 4) 정렬 기능 추가
+
+#주어진 키워드를 기준으로 parking_spot 객체의 리스트를 정렬하여 반환
+def sort_by_keyword(spots, keyword):
+    return sorted(spots, key = lambda spot: spot.get(keyword))
+
+
+
 # 각 단계별로 테스트 (테스트할때 주석해제 후 사용)
 if __name__ == '__main__':
     print("Testing the module...")

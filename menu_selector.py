@@ -61,15 +61,17 @@ def start_process(path):
                 spots = parking_spot_manager.filter_by_location(spots, locations)
             else:
                 print("invalid input")
+        #입력 받은 키워드에 대해 정렬
         elif select == 3:
             keywords = ['name', 'city', 'district', 'ptype', 'latitude', 'longitude']
             print("---sort by---")
             print(keywords)
             keyword = input('type keyword:')
+            #입력받은 키워드에 대해 정렬하여 출력
             if keyword in keywords:
-                print("not implemented yet")
-                # fill this block
-            else: print("invalid input")
+                spots = parking_spot_manager.sort_by_keyword(spots, keyword)
+            else: 
+                print("invalid input")
 
         #Exit 출력하고 반복 종료
         elif select == 4:
